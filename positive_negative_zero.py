@@ -1,25 +1,23 @@
-positive = 0
-negative = 0
-zero = 0
+sum = 0
+average = 0
+count = 0
+maximum = None
+
 while True:
     number = int(input("Enter a number: "))
-    if number == 99:
+    if number == 0:
         break
-    if number < 0:
-        negative += 1
-    if number > 0:
-        positive += 1
+    sum += number
+    count += 1
+
+    if maximum is None:
+        maximum = number
     else:
-        zero += 1
-print(f"Positive: {positive}")
-print(f"Negative: {negative}")
-print(f"Zero: {zero}")
+        maximum = max(maximum, number)
+if count > 0:
+    average = sum / count
 
-
-
-0
-
-
-
-
-
+print(f"sum: {sum}")
+print(f"average: {average}")
+print(f"count: {count}")
+print(f"maximum: {maximum}")
